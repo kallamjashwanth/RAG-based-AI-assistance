@@ -1,2 +1,0 @@
-# RAG based AI assistance
-

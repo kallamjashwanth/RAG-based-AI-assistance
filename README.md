@@ -50,11 +50,16 @@ Only relevant textual information is used for retrieval and generation.
   - Enter a query
   - View generated answers
   - Inspect retrieved document summaries
- 
+    
+## Results from streamlit
+<img width="1747" height="784" alt="image" src="https://github.com/user-attachments/assets/e5c71cf4-6dd1-4c5b-ba2c-426e0eb32471" />
+<img width="1744" height="571" alt="image" src="https://github.com/user-attachments/assets/c446edfd-2448-4bb9-885c-ee818acc7413" />
+
 ## How to Run
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+
 
 
 

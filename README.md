@@ -56,10 +56,6 @@ Only relevant textual information is used for retrieval and generation.
 pip install -r requirements.txt
 streamlit run app.py
 
-**## Example Queries**
-The following queries work well with the dataset:
-What is deep learning and why is it important in artificial intelligence?
-How do neural networks differ from traditional machine learning methods?
-What role do deep learning models play in modern AI systems?
+
 
 

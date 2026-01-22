@@ -70,16 +70,15 @@ Only relevant textual information is used for retrieval and generation.
 - On the **first run**, Hugging Face models (embedding model and LLM) will be downloaded automatically.
 - Models are cached locally, so **subsequent runs start immediately without re-downloading**.
 - Internet connection is required only for the first run.
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-
 ## Testing
 Minimal tests are provided to validate core components.
 <img width="863" height="154" alt="image" src="https://github.com/user-attachments/assets/c86cb5c2-16e6-4ce0-a140-8d521d4d9333" />
 Run tests using:
 ```bash
+pip install -r requirements.txt
 pytest tests/
+```bash
+streamlit run app.py
 
 
 

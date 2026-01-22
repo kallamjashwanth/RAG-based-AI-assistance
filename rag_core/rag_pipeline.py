@@ -26,16 +26,6 @@ def rag_pipeline(
     # LLM answer 
     llm_answer = generate_answer(llm, query, retrieved_docs)
 
-    # summaries = []
-    # for i, doc in enumerate(retrieved_docs, 1):
-    #     summaries.append(
-    #         f"Source {i} Summary:\n{doc['text'][:400]}..."
-    #     )
-
-    # doc_summaries = "\n\n".join(summaries)
-    # summary_text = ""
-    # if retrieved_docs:
-    #     summary_text = retrieved_docs[0]["text"][:500]
     summary = ""
     if retrieved_docs:
         summary = clean_text(retrieved_docs[0]["text"])[:500]

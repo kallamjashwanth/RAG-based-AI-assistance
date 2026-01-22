@@ -15,6 +15,12 @@ The project fulfills the following requirements:
 6. Follow clean code structure and best practices  
 7. Provide a user-friendly interface
 
+## Architecture & Design Decisions
+- Documents are chunked to improve retrieval granularity.
+- Hybrid search combines BM25 (keyword) and FAISS (semantic) for better recall.
+- Cosine similarity is used to ensure consistent scoring.
+- Lightweight LLMs are used to support CPU-only environments.
+
 ## Dataset
 - **Dataset**: AI Research Papers (arXiv-based)
 - **Columns used**:
@@ -62,6 +68,7 @@ Only relevant textual information is used for retrieval and generation.
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+
 
 
 

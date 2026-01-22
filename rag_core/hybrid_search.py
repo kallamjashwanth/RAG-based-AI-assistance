@@ -1,7 +1,7 @@
 from typing import List, Dict
-from src.logger import setup_logger
-from src.bm25_index import bm25_search
-from src.vector_index import faiss_search
+from rag_core.logger import setup_logger
+from rag_core.bm25_index import bm25_search
+from rag_core.vector_index import faiss_search
 
 logger = setup_logger()
 

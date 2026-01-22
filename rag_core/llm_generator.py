@@ -1,5 +1,5 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-from src.logger import setup_logger
+from rag_core.logger import setup_logger
 
 logger = setup_logger()
 

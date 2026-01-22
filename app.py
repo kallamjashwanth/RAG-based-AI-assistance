@@ -1,10 +1,10 @@
 import streamlit as st
-from src.data_loader import load_dataset, preprocess_dataset
-from src.chunking import chunk_documents
-from src.bm25_index import build_bm25_index
-from src.vector_index import load_embedding_model, create_embeddings, build_faiss_index
-from src.rag_pipeline import rag_pipeline
-from src.llm_generator import load_llm
+from rag_core.data_loader import load_dataset, preprocess_dataset
+from rag_core.chunking import chunk_documents
+from rag_core.bm25_index import build_bm25_index
+from rag_core.vector_index import load_embedding_model, create_embeddings, build_faiss_index
+from rag_core.rag_pipeline import rag_pipeline
+from rag_core.llm_generator import load_llm
 
 st.set_page_config(
     page_title="RAG based AI Research Paper Assistant",

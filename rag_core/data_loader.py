@@ -1,6 +1,6 @@
 import pandas as pd
-from src.config import DATA_PATH, TEXT_COLUMNS
-from src.logger import setup_logger
+from rag_core.configure import DATA_PATH, TEXT_COLUMNS
+from rag_core.logger import setup_logger
 
 logger = setup_logger()
 

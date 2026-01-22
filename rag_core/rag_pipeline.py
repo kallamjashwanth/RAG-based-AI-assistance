@@ -1,27 +1,9 @@
 from typing import List, Dict
-from src.logger import setup_logger
-from src.hybrid_search import hybrid_search
-from src.llm_generator import generate_answer
+from rag_core.logger import setup_logger
+from rag_core.hybrid_search import hybrid_search
+from rag_core.llm_generator import generate_answer
 
 logger = setup_logger()
-
-# def build_prompt(query: str, retrieved_docs: List[Dict]) -> str:
-#     context = "\n\n".join(
-#         [doc["text"] for doc in retrieved_docs]
-#     )
-
-#     prompt = f"""
-# You are an AI research assistant.
-
-# Context:
-# {context}
-
-# Question:
-# {query}
-
-# Answer:
-# """
-#     return prompt
 
 def rag_pipeline(
     query: str,

@@ -56,9 +56,13 @@ Only relevant textual information is used for retrieval and generation.
 <img width="1744" height="571" alt="image" src="https://github.com/user-attachments/assets/c446edfd-2448-4bb9-885c-ee818acc7413" />
 
 ## How to Run
+### Environment & Reproducibility
+- **Python version**: 3.10 or 3.11
+- **Hardware**: CPU-only (no GPU required)
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+
 
 
 

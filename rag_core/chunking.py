@@ -26,7 +26,12 @@ def chunk_documents(documents: List[Dict]) -> List[Dict]:
             chunked_docs.append({
                 "entry_id": doc["entry_id"],
                 "chunk_id": idx,
-                "text": chunk
+                "text": chunk,
+                "metadata": {
+                    "title": doc.get("title", ""),
+                    "authors": doc.get("authors", ""),
+                    "category": doc.get("primary_category", "")
+                }
             })
 
     logger.info(f"Created {len(chunked_docs)} chunks")

@@ -8,6 +8,8 @@ def load_dataset():
     try:
         logger.info("Loading dataset...")
         df = pd.read_csv(DATA_PATH)
+        if df.empty:
+           raise ValueError("Dataset loaded but it is empty.")
         logger.info(f"Dataset loaded with {len(df)} rows")
         return df
     except Exception as e:

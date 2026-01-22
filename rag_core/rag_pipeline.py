@@ -1,7 +1,7 @@
 from typing import List, Dict
 from rag_core.logger import setup_logger
 from rag_core.hybrid_search import hybrid_search
-from rag_core.llm_generator import generate_answer
+from rag_core.llm_generator import clean_text, generate_answer
 
 logger = setup_logger()
 
@@ -26,13 +26,24 @@ def rag_pipeline(
     # LLM answer 
     llm_answer = generate_answer(llm, query, retrieved_docs)
 
-    top_doc_summary = ""
+    # summaries = []
+    # for i, doc in enumerate(retrieved_docs, 1):
+    #     summaries.append(
+    #         f"Source {i} Summary:\n{doc['text'][:400]}..."
+    #     )
+
+    # doc_summaries = "\n\n".join(summaries)
+    # summary_text = ""
+    # if retrieved_docs:
+    #     summary_text = retrieved_docs[0]["text"][:500]
+    summary = ""
     if retrieved_docs:
-        top_doc_summary = retrieved_docs[0]["text"]
+        summary = clean_text(retrieved_docs[0]["text"])[:500]
+
 
     return {
         "query": query,
         "llm_answer": llm_answer,
-        "doc1_summary": top_doc_summary,
+        "doc_summaries": summary,
         "retrieved_docs": retrieved_docs
     }

@@ -5,37 +5,23 @@ from src.llm_generator import generate_answer
 
 logger = setup_logger()
 
-def mock_generate_answer(query: str, retrieved_docs: List[Dict]) -> str:
+# def build_prompt(query: str, retrieved_docs: List[Dict]) -> str:
+#     context = "\n\n".join(
+#         [doc["text"] for doc in retrieved_docs]
+#     )
 
-    if not retrieved_docs:
-        return "No relevant documents were found to answer your question."
+#     prompt = f"""
+# You are an AI research assistant.
 
-    answer = f"Based on the retrieved research papers, here is a summary related to your question:\n\n"
+# Context:
+# {context}
 
-    for doc in retrieved_docs[:3]:
-        answer += f"- {doc['text'][:300]}...\n\n"
+# Question:
+# {query}
 
-    answer += "\n(This response was generated using retrieved document context.)"
-    return answer
-
-
-def build_prompt(query: str, retrieved_docs: List[Dict]) -> str:
-    context = "\n\n".join(
-        [doc["text"] for doc in retrieved_docs]
-    )
-
-    prompt = f"""
-You are an AI research assistant.
-
-Context:
-{context}
-
-Question:
-{query}
-
-Answer:
-"""
-    return prompt
+# Answer:
+# """
+#     return prompt
 
 def rag_pipeline(
     query: str,

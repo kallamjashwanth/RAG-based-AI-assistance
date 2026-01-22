@@ -15,6 +15,12 @@ The project fulfills the following requirements:
 6. Follow clean code structure and best practices  
 7. Provide a user-friendly interface
 
+## Architecture & Design Decisions
+- Documents are chunked to improve retrieval granularity.
+- Hybrid search combines BM25 (keyword) and FAISS (semantic) for better recall.
+- Cosine similarity is used to ensure consistent scoring.
+- Lightweight LLMs are used to support CPU-only environments.
+
 ## Dataset
 - **Dataset**: AI Research Papers (arXiv-based)
 - **Columns used**:
@@ -50,15 +56,32 @@ Only relevant textual information is used for retrieval and generation.
   - Enter a query
   - View generated answers
   - Inspect retrieved document summaries
-    
+
 ## Results from streamlit
 <img width="1747" height="784" alt="image" src="https://github.com/user-attachments/assets/e5c71cf4-6dd1-4c5b-ba2c-426e0eb32471" />
 <img width="1744" height="571" alt="image" src="https://github.com/user-attachments/assets/c446edfd-2448-4bb9-885c-ee818acc7413" />
 
 ## How to Run
+### Environment & Reproducibility
+- **Python version**: 3.10 or 3.11
+- **Operating System**: Windows / Linux / macOS
+- **Hardware**: CPU-only (no GPU required)
+### First Run Notice
+- On the **first run**, Hugging Face models (embedding model and LLM) will be downloaded automatically.
+- Models are cached locally, so **subsequent runs start immediately without re-downloading**.
+- Internet connection is required only for the first run.
+## Testing
+Minimal tests are provided to validate core components.
+<img width="863" height="154" alt="image" src="https://github.com/user-attachments/assets/c86cb5c2-16e6-4ce0-a140-8d521d4d9333" />
+Run tests using:
 ```bash
 pip install -r requirements.txt
+pytest tests/
+```bash
 streamlit run app.py
+
+
+
 
 
 

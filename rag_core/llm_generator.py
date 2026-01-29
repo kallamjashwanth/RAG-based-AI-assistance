@@ -67,7 +67,7 @@ Question: {query}
     except Exception:
         answer = ""
 
-    # 🚑 CRITICAL FALLBACK (THIS FIXES YOUR ISSUE)
+    # CRITICAL FALLBACK 
     if len(answer) < 20:
         # Use first document summary as answer
         fallback = clean_text(retrieved_docs[0]["text"])

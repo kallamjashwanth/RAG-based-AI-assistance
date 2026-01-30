@@ -2,11 +2,11 @@ import os
 
 TEXT_COLUMNS = ["title", "summary", "authors", "primary_category"]
 
-# ---------- Paths ----------
+#  Paths 
 DATA_PATH = os.getenv("DATA_PATH", "data/arxiv_ai.csv")
 ARTIFACT_DIR = os.getenv("ARTIFACT_DIR", "artifacts")
 
-# ---------- Models ----------
+# Models
 EMBEDDING_MODEL = os.getenv(
     "EMBEDDING_MODEL",
     "sentence-transformers/all-MiniLM-L6-v2"
